@@ -10,7 +10,7 @@ public class Utils {
     private static ArrayList<Book> allBooks;
     private static ArrayList<Book> alreadyReadBooks;
     private static ArrayList<Book> wantToReadBooks;
-    private static ArrayList<Book> currentlyReadingBooks;
+    private static ArrayList<Book> currentlyReadBooks;
     private static  ArrayList<Book> favouriteBooks;
 
     private Utils() {
@@ -24,8 +24,8 @@ public class Utils {
         if (null==wantToReadBooks){
             wantToReadBooks = new ArrayList<>();
         }
-        if (null==currentlyReadingBooks){
-            currentlyReadingBooks = new ArrayList<>();
+        if (null==currentlyReadBooks){
+            currentlyReadBooks = new ArrayList<>();
         }
         if (null==favouriteBooks){
             favouriteBooks = new ArrayList<>();
@@ -61,14 +61,15 @@ public class Utils {
         return wantToReadBooks;
     }
 
-    public static ArrayList<Book> getCurrentlyReadingBooks() {
-        return currentlyReadingBooks;
+    public static ArrayList<Book> getCurrentlyReadBooks() {
+        return currentlyReadBooks;
     }
 
     public static ArrayList<Book> getFavouriteBooks() {
         return favouriteBooks;
     }
 
+    // return a book class item
     public Book getBookById(int id){
         for (Book b: allBooks){
             if (b.getId()==id){
@@ -77,4 +78,36 @@ public class Utils {
         }
         return null;
     }
+
+    public boolean addToAlreadyRead(Book book){
+        return alreadyReadBooks.add(book);
+    }
+
+    public boolean addToWantToRead(Book book){
+        return wantToReadBooks.add(book);
+    }
+    public boolean addToCurrentlyRead(Book book){
+        return currentlyReadBooks.add(book);
+    }
+    public boolean addToFavourite(Book book){
+        return favouriteBooks.add(book);
+    }
+
+    public boolean removeFromAlreadyRead(Book book){
+        return alreadyReadBooks.remove(book);
+    }
+
+    public boolean removeFromWantToRead(Book book){
+        return wantToReadBooks.remove(book);
+    }
+
+    public boolean removeFromCurrentlyRead(Book book){
+        return currentlyReadBooks.remove(book);
+    }
+
+    public boolean removeFromFavourite(Book book){
+        return favouriteBooks.remove(book);
+    }
+
+
 }

@@ -39,9 +39,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
                 android:text="Already Read"
-                app:layout_constraintEnd_toEndOf="@+id/btnAddToWantToRead"
-                app:layout_constraintStart_toStartOf="@+id/btnAddToWantToRead"
-                app:layout_constraintTop_toBottomOf="@+id/btnAddToWantToRead" />
+                app:layout_constraintEnd_toEndOf="@+id/btnAddtoWantToRead"
+                app:layout_constraintStart_toStartOf="@+id/btnAddtoWantToRead"
+                app:layout_constraintTop_toBottomOf="@+id/btnAddtoWantToRead" />
 
             <Button
                 android:id="@+id/btnAddToFavourite"
@@ -54,7 +54,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/btnAddToAlreadyRead" />
 
             <Button
-                android:id="@+id/btnAddToWantToRead"
+                android:id="@+id/btnAddtoWantToRead"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="36dp"

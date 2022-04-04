@@ -14,6 +14,7 @@ public class Book {
         return isExpanded;
     }
 
+    //boolean to check if cardview book is expanded
     public void setExpanded(Boolean expanded) {
         isExpanded = expanded;
     }
