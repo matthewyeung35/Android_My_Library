@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyLibrary">
         <activity
+            android:name=".WebsiteActivity"
+            android:exported="false" />
+        <activity
             android:name=".FavouriteActivity"
             android:exported="false" />
         <activity

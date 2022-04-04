@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class BookActivity extends AppCompatActivity {
     private TextView txtBookName, txtAuthor, txtPages, txtDescription;
-    private Button btnAddtoWantToRead, btnAddToAlreadyRead, btnAddToCurrentlyReading, btnAddToFavourite;
+    private Button btnAddtoWantToRead, btnAddToAlreadyRead, btnAddToCurrentlyReading, btnAddToFavourite, btnWiki;
     private ImageView bookImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,6 @@ public class BookActivity extends AppCompatActivity {
                 Book incomingBook = Utils.getInstance().getBookById(bookId);
                 if (incomingBook != null){
                     setData(incomingBook);
-
                     handleAlreadyRead(incomingBook);
                     handleWantToReadBooks(incomingBook);
                     handleCurrentlyReadingBooks(incomingBook);
@@ -158,6 +157,14 @@ public class BookActivity extends AppCompatActivity {
         Glide.with(this)
                 .asBitmap().load(book.getImageUrl())
                 .into(bookImage);
+        btnWiki.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BookActivity.this, WebsiteActivity.class);
+                intent.putExtra("url", book.getWikiUrl());
+                startActivity(intent);
+            }
+        });
     }
 
     private void initViews() {
@@ -172,6 +179,7 @@ public class BookActivity extends AppCompatActivity {
     btnAddtoWantToRead = findViewById(R.id.btnAddtoWantToRead);
 
     bookImage = findViewById(R.id.imageBook);
+    btnWiki = findViewById(R.id.btnWiki);
 
 
     }

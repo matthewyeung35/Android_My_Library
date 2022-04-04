@@ -9,6 +9,7 @@ public class Book {
     private String shortDesc;
     private String longDesc;
     private Boolean isExpanded;
+    private String wikiUrl;
 
     public Boolean isExpanded() {
         return isExpanded;
@@ -20,7 +21,7 @@ public class Book {
     }
 
 
-    public Book(int id, String name, String author, int pages, String imageUrl, String shortDesc, String longDesc) {
+    public Book(int id, String name, String author, int pages, String imageUrl, String shortDesc, String longDesc, String wikiUrl) {
         this.id = id;
         this.name = name;
         this.author = author;
@@ -29,6 +30,11 @@ public class Book {
         this.shortDesc = shortDesc;
         this.longDesc = longDesc;
         this.isExpanded = false;
+        this.wikiUrl = wikiUrl;
+    }
+
+    public String getWikiUrl() {
+        return wikiUrl;
     }
 
     public int getId() {

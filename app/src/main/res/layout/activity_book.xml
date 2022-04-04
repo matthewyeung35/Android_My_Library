@@ -157,6 +157,16 @@
                 android:text="Long Desc"
                 app:layout_constraintStart_toStartOf="@+id/guideline7"
                 app:layout_constraintTop_toBottomOf="@+id/txtBook7" />
+
+            <Button
+                android:id="@+id/btnWiki"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="68dp"
+                android:text="visit wiki"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline6"
+                app:layout_constraintTop_toBottomOf="@+id/btnAddToFavourite" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
