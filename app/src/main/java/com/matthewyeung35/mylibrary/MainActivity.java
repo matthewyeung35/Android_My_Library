@@ -8,9 +8,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
 
 public class MainActivity extends AppCompatActivity {
     private Button btnAllBooks, btnCurrentlyReading, btnWantToRead, btnAlreadyRead, btnFavourite, btnAbout;
+    private ImageView image;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle(getString(R.string.app_name));
-                builder.setMessage("App created by matthew, following a guide from meicode.org");
+                builder.setMessage("App created by matthew, following a course from meicode");
                 builder.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -74,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent = new Intent(MainActivity.this,WebsiteActivity.class);
-                        intent.putExtra("url", "https://matthewyeung35.github.io/portfolio-site/");
+                        intent.putExtra("url", "https://meicode.org/");
                         startActivity(intent);
                     }
                 });
@@ -84,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        Utils.getInstance();
+        Utils.getInstance(this);
     }
 
     private void initViews() {
@@ -94,6 +98,12 @@ public class MainActivity extends AppCompatActivity {
         btnAlreadyRead = findViewById(R.id.btnAlreadyRead);
         btnFavourite = findViewById(R.id.btnFavourite);
         btnAbout = findViewById(R.id.btnAbout);
+        image = findViewById(R.id.image);
+
+        Glide.with(this)
+                .asBitmap()
+                .load("https://media.wired.com/photos/5be4cd03db23f3775e466767/master/pass/books-521812297.jpg")
+                .into(image);
     }
 
 }
